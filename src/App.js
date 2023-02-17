@@ -28,7 +28,6 @@ const App = () => {
       setCurrentNumber(String(sum))
       setOperation('')
     }
-    
   }
 
   const handleMinusNumber = () => {
@@ -41,7 +40,6 @@ const App = () => {
       setCurrentNumber(String(minus))
       setOperation('')
     }
-    
   }
 
   const handleEquals = () => {
@@ -57,7 +55,6 @@ const App = () => {
           break;
       }
     }
-    
   }
 
   console.log(onclick);
