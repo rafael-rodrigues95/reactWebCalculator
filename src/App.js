@@ -8,6 +8,7 @@ const App = () => {
   const [currentNumber, setCurrentNumber] = useState('0');
   const [firstNumber, setFirstNumber] = useState('0');
   const [operation, setOperation] = useState('');
+  const [newOperation, setNewOperation] = useState('');
   const handleOnClear = () => {
     setCurrentNumber('0')
     setFirstNumber('0')
@@ -15,7 +16,14 @@ const App = () => {
   };
 
   const handleAddNumber = (num) => {
-    setCurrentNumber(prev => `${prev === '0' ? '' : prev}${num}`)
+    console.log(newOperation)
+    if(newOperation === '0'){
+      setCurrentNumber(prev => `${prev === '0' ? '' : prev}${num}`)
+    }else{
+      handleOnClear();
+      setCurrentNumber(prev => `${prev === '0' ? '' : prev}${num}`)
+      setNewOperation('0');
+    }
   };
 
   const handleSumNumber = () => {
@@ -60,6 +68,7 @@ const App = () => {
         default:
         break;
       }
+      setNewOperation('1');
     }
   }
 
@@ -86,8 +95,6 @@ const App = () => {
       setOperation('')
     }
   }
-
-  console.log(onclick);
 
   return (
     <Container>
